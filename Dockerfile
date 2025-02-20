@@ -9,7 +9,6 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/* && \
   pip3 install --no-cache-dir pgxnclient && \
   pgxn install pg_repack && \
-  groupadd -g 1001 postgres && \
-  useradd -r -u 1001 -g postgres postgres
+  useradd -r -u 1001 -g root postgres
 
 USER postgres
