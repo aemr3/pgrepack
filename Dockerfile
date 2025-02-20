@@ -8,6 +8,7 @@ RUN apt-get update && \
   apt-get install -y python3 python3-pip libssl-dev liblz4-dev && \
   rm -rf /var/lib/apt/lists/* && \
   pip3 install --no-cache-dir pgxnclient && \
-  pgxn install pg_repack
+  pgxn install pg_repack && \
+  useradd -r -u 1001 -g postgres postgres
 
-USER 1001
+USER postgres
